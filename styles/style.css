@@ -1,205 +1,190 @@
 @charset "UTF-8";
 
-@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap');
-
-/* Layout 
-    - Mobile: 375px
-    - Desktop: 1440px
-*/
-
-:root {
-    /* Primary */
-    --Light-red: hsl(0, 100%, 67%,0.144);
-    --Orangey-yellow: hsl(39, 100%, 56%,0.144);
-    --Green-teal: hsl(166, 100%, 37%,0.144);
-    --Cobalt-blue: hsl(234, 85%, 45%,0.144);
-
-    /* Gradients-Background */
-    --Light-slate-blue:hsl(252, 100%, 67%);
-    --Light-royal-blue: hsl(241, 81%, 54%);
-    
-    /* Gradients-Circle */
-    --Violet-blue: hsla(256, 72%, 46%, 1);
-    --Persian-blue: hsla(241, 72%, 46%, 0);
-
-    /* Neutral */
-    --White: hsl(0, 0%, 100%);
-    --Pale-blue: hsl(221, 100%, 96%);
-    --Light-lavender: hsl(241, 100%, 89%);
-    --Dark-gray-blue: hsl(224, 30%, 27%); 
-    
-    /* Typografic */
-    --font-standard:'Hanken Grotesk';
+@font-face {
+    font-family: 'Hanken';
+    src: url(../assets/fonts/HankenGrotesk-VariableFont_wght.ttf) format('opentype');
 }
 
 * {
-    padding: 0px;
     margin: 0px;
+    padding: 0px;
     box-sizing: border-box;
 }
 
 body {
-    font-family: var(--font-standard);
     background-color: gray;
+    font-family: 'Hanken',sans-serif;
+}
+
+main {
+    background-color: rgb(240, 240, 240);
+}
+
+aside {
+    background-color: white;
 }
 
 p {
     font-size: 18px;
 }
 
-main {
-    background-color: var(--White);
-}
-
-section#result {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    background-image: linear-gradient(to bottom, var(--Light-slate-blue), var(--Light-royal-blue));
-    color: var(--Pale-blue);
+section#point {
+    background-image: linear-gradient(to bottom,hsl(252, 100%, 67%), hsl(241, 81%, 54%));
     text-align: center;
-    padding: 20px;
     border-radius: 0px 0px 25px 25px;
 }
 
-section#result > h1 {
-    font-size: 1.5em;
+section#point > h1{
+    color: hsla(0, 0%, 83%, 0.757);
+    font-size: 1.1em;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
-section#result > p {
-    font-size: 1em;
-    width: 260px;
+section#point > h2 {
+    color: hsl(0, 0%, 100%);
+    padding-top: 20px;
+    padding-bottom: 10px;
 }
 
-section#result small {
-    color: rgba(200, 199, 255, 0.494);
+section#point > p {
+    color: hsla(0, 0%, 83%, 0.757);
+    font-size: .9em;
+    width: 250px;
+    margin: auto;
+    padding-bottom: 35px;
 }
 
-section#result > .letter-gray {
-    color:  rgb(200, 199, 255);
-    padding-top: 10px;
-}
-
-section#result > div#circle {
+section#point > div#circle {
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
+    align-items: center;
 
-    background-image: linear-gradient(to bottom,var(--Violet-blue), var(--Persian-blue));
-    height: 140px;
-    width: 140px;
+    background-image: linear-gradient(to bottom,hsla(256, 72%, 46%, 1), hsla(241, 72%, 46%, 0));
     border-radius: 50%;
-    margin: 20px 0px;
-    transition: 300ms;
+    width: 125px;
+    margin: auto;
+    padding-top: 20px;
     cursor: default;
 }
 
-section#result > div#circle:hover {
-    transform: scale(120%);
-}
-
-section#result > div#circle > p#number {
-    color: var(--White);
-    font-size: 3.5em;
+section#point > div#circle > span {
+    font-size: 3em;
     font-weight: bold;
+    color: hsl(0, 0%, 100%);
 }
 
-section#summary {
-    height: 390px;
-    padding: 10px;
+section#point > div#circle > p {
+    padding-bottom: 20px;
+    color: hsla(0, 0%, 83%, 0.563);
 }
 
 section#summary > h1 {
-    color: var(--Dark-gray-blue);
-    font-size: 1.3em;
-    padding: 15px 0px 5px 15px;
+    color: hsl(224, 30%, 27%);
+    font-size: 1.2em;
+    padding: 20px;
 }
 
-section#summary > div{
+section#summary > ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+section#summary > ul > li {
     display: flex;
     justify-content: space-between;
+    
 
-    margin: 20px;
-    padding: 15px;
-    border-radius: 10px;
+    width: 320px;
+    margin-bottom: 10px;
+    padding: 20px 10px;
+    border-radius: 13px;
+    list-style-type: none;
 }
 
-section#summary > div > p {
-    color: var(--Dark-gray-blue);
+section#summary > ul > li > span.number {
+    text-align: right;
+    color:hsl(224, 30%, 27%);
     font-weight: bold;
 }
 
-section#summary > div span {
-   color:rgb(176, 176, 176);
+section#summary > ul > li > span.number > span {
+    color: rgb(174, 174, 174);
 }
 
-section#summary > div#reaction {
-    background-color: var(--Light-red);
+section#summary > ul > li#reaction {
+    background-color: hsla(0, 100%, 67%, 0.190);
 }
 
-section#summary > div#memory {
-    background-color: var(--Orangey-yellow);
+section#summary > ul > li#reaction > p {
+    color: hsl(0, 100%, 67%);
 }
 
-section#summary > div#verbal {
-    background-color: var(--Green-teal);
+section#summary > ul > li#memory {
+    background-color: hsl(39, 100%, 56%,  0.190);
 }
 
-section#summary > div#visual {
-    background-color: var(--Cobalt-blue);  
+section#summary > ul > li#memory > p {
+    color: hsl(39, 100%, 56%);
 }
 
-section#f-button {
+section#summary > ul > li#verbal {
+    background-color: hsl(166, 100%, 37%,  0.190);
+}
+
+section#summary > ul > li#verbal > p {
+    color: hsl(166, 100%, 37%);
+}
+
+section#summary > ul > li#visual {
+    background-color: hsl(234, 85%, 45%,  0.190);
+}
+
+section#summary > ul > li#visual > p {
+    color: hsl(234, 85%, 45%);
+}
+
+section#summary > div#btn {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: center; 
 }
 
-section#f-button > div {
-    width: 290px;
-    background-color: var(--Dark-gray-blue);
-    margin-bottom: 20px;
-    border-radius: 25px;
+section#summary > div#btn > p {
+    background-color: hsl(224, 30%, 27%);
     color: white;
-    padding: 15px;
     text-align: center;
-    transition: 200ms;
+    width: 320px;
+    padding: 15px;
+    margin-top: 10px;
+    margin-bottom: 35px;
+    border-radius: 25px;
+    cursor: pointer;  
+    transition: 300ms;
 }
 
-section#f-button > div:hover {
-    background-color: hsl(241, 70%, 17%);
-    transform: scale(103%);
-    cursor: pointer;
+section#summary > div#btn > p:hover {
+    background-color:  hsl(224, 31%, 12%);
+    transform: scale(104%)
 }
 
 footer {
-    background-color: var(--Pale-blue);
+    background-color: hsl(221, 100%, 96%);
     text-align: center;
-    font-size: 11px;
-    color: hsl(228, 45%, 44%); 
+    color: black;
+    padding: 4px;
 }
 
-footer  a {
-    font-weight: bold;
-    color: hsl(228, 45%, 44%); 
+footer a {
+    color: black;
     text-decoration: none;
+    font-weight: bold;
 }
 
 footer a:hover {
-    color: var(--Light-slate-blue);
-    text-decoration: underline;
+    color: hsl(241, 81%, 54%);
 }
-
-
-
-
-
-
-
-
-
-
 
 
